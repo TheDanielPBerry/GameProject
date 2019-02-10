@@ -65,7 +65,8 @@ $(function() {
 	var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 
-
+	var ambientLight = new THREE.AmbientLight( 0xFFFFFF, 0.8 );
+	scene.add(ambientLight);
 
 	var onProgress = function (xhr) {
 		if (xhr.lengthComputable) {
@@ -75,16 +76,18 @@ $(function() {
 	};
 	//THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
 	new THREE.MTLLoader()
-		.setPath( 'models' )
-		.load( 'crate.mtl', function ( materials ) {
+		.setPath('assets/models/')
+		.load('crate.mtl', function (materials) {
 			materials.preload();
 			new THREE.OBJLoader()
-				.setMaterials( materials )
-				.setPath( 'models/crate' )
-				.load( 'crate.obj', function ( object ) {
-					object.position.y = - 95;
+				.setMaterials(materials)
+				.setPath('assets/models/')
+				.load('crate.obj', function (object) {
+					//object.position.y = - 95;
 					scene.add(object);
-				}, onProgress, onError);
+				}, onProgress, function (e) {
+					console.error(e);
+				});
 	} );
 
 

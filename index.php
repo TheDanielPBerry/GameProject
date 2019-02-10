@@ -10,9 +10,9 @@
 	</script>
 	<script type="module" src="js/lib/three/loaders/DDSLoader.js">
 	</script>
-	<script type="module" src="js/lib/three/loaders/ObjectLoader.js">
+	<script type="module" src="js/lib/three/loaders/OBJLoader.js">
 	</script>
-	<script type="module" src="js/lib/three/loaders/MaterialLoader.js">
+	<script type="module" src="js/lib/three/loaders/MTLLoader.js">
 	</script>
 	<script type="text/javascript" src="js/global.js?v=1.0">
 	</script>
