@@ -68,12 +68,6 @@ $(function() {
 	var ambientLight = new THREE.AmbientLight( 0xFFFFFF, 0.8 );
 	scene.add(ambientLight);
 
-	var onProgress = function (xhr) {
-		if (xhr.lengthComputable) {
-			var percentComplete = xhr.loaded / xhr.total * 100;
-			console.log( Math.round( percentComplete, 2 ) + '% downloaded' );
-		}
-	};
 	//THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
 	new THREE.MTLLoader()
 		.setPath('assets/models/')
